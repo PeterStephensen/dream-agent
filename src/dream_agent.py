@@ -194,6 +194,3 @@ class Agent:
         """
         return Agent._nAgents
 
-
-a = Agent()
-
