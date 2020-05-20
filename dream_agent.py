@@ -164,6 +164,11 @@ class Agent:
             return self._count
 
     def count(self):
+        """Get the number of children
+
+        Returns:
+            int -- The number of children
+        """
         return self._count
 
     def get_number_of_agents(self):
@@ -175,6 +180,11 @@ class Agent:
         return self._count
 
     def number_of_agents(self):
+        """Get the number of children
+
+        Returns:
+            int -- The number of children
+        """
         return self._count
 
     def get_id(self):
