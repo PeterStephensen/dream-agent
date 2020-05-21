@@ -1,4 +1,5 @@
-from .context import dream_agent
+import os
+#from ....abm.dream_agent import Agent 
 
-
-print(__file__)
+print("ok")
+print(os.getcwd())
