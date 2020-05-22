@@ -3,6 +3,7 @@ import sys, os
 sys.path.append(os.getcwd()) # Add root-dir to sys.path
 
 from dream_agent import Agent
+
 import random
 import math
 import matplotlib.pyplot as plt
@@ -73,8 +74,8 @@ class Person(Agent):
                 if (p.communicate(ECommunication.I_ATTACK, self) == ECommunication.YOU_LOSE):
                     self.transfer_to(p, Settings.loot_share * self._wealth)
 
-    def communicate(self, ecommunicate, person):                #3
-        if ecommunicate == ECommunication.I_ATTACK:
+    def communicate(self, communication, person):                #3
+        if communication == ECommunication.I_ATTACK:
             if self._strength < person._strength:
                 self.transfer_to(person, Settings.loot_share * self._wealth)
                 return ECommunication.YOU_WIN
@@ -142,7 +143,7 @@ class Simulation(Agent):
         Simulation.population = Agent(self)
 
         # Adding persons to the population
-        for i in range(Settings.number_of_agents):
+        for _ in range(Settings.number_of_agents):
             Person(Simulation.population)
 
         # Start the simulation
@@ -176,7 +177,7 @@ Settings.number_of_periods = 10000
 Settings.out_file = "test.txt"
 
 Settings.graphics_show = True
-Settings.graphics_periods_per_pic = 25
+Settings.graphics_periods_per_pic = 15
 
 Settings.loot_share = 0.25 # If you win, this is the share of the others wealth you get
 Settings.attack_probability = 0.1
